@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = [
+    "sr71-core",
+    "kurumi-deamon",
+    "sr71-ctl"
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+authors = ["Mo Maali"]
+description = "SR-71 Kurumi companion"
+license = "MIT"
+readme = "README.md"

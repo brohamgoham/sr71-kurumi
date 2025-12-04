@@ -1,0 +1,8 @@
+[package]
+name = "kurumi-deamon"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100"
+sr71-core = { path = "../sr71-core" }
