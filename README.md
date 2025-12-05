@@ -26,7 +26,7 @@ sr71-kurumi/
 - Zero-latency compositor integration
 
 
-# 🔥next sprint goals become:
+# 🔥next sprint goal:
 
 ### **Sprint A: daemon maturity**
 - add Unix socket for IPC

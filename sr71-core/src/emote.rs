@@ -1,5 +1,6 @@
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, PartialEq, Clone, Eq, Copy)]
+#[derive(Debug, PartialEq, Clone, Eq, Copy, Serialize, Deserialize)]
 pub enum Emote {
     Idle,
     Sleepy,

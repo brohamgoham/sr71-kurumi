@@ -16,9 +16,11 @@ impl AnimeStateMachine {
     pub fn transition(&mut self, next: Emote) -> KurumiControl {
         if self.current != next {
             self.current = next;
+            KurumiControl::SetEmote(next)
+        } else {
+            KurumiControl::NoOp
         }
 
-        KurumiControl::SetEmote(next)
     }
     
     pub fn current(&self) -> Emote { self.current }
