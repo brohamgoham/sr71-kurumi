@@ -1,13 +1,33 @@
-use sr71_core::{anime::AnimeStateMachine, emote::Emote};
 
-fn main() -> anyhow::Result<()> {
+use sr71_core::{
+    anime::AnimeStateMachine,
+    emote::Emote,
+    protocol::{SOCKET_PATH, KurumiControl, IPCPayload},
+};
+use tokio::net::UnixListener;
+
+mod ipc;
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
     println!("Kurumi daemon booting...");
 
+    let listener = UnixListener::bind(SOCKET_PATH)?;
+
     let mut fsm = AnimeStateMachine::new();
-    println!("Current Emote: {:?}", fsm.current());
+    println!("Initial state: {:?}", fsm.current());
+    
+    loop {
+        let (mut stream, _) = listener.accept().await?;
 
-    fsm.transition(Emote::Coding);
-    println!("Transitioned to -> Emote: {:?}", fsm.current());
+        tokio::spawn(async move {
+            let payload = IPCPayload {
+                command: KurumiControl::SetEmote(Emote::Coding)
+            };
 
-    Ok(())
+            println!("client connected -> sening payload");
+            ipc::send_payload(&mut stream, &payload).await.unwrap();
+        });
+    }
+
 }

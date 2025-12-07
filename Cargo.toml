@@ -13,3 +13,7 @@ authors = ["Mo Maali"]
 description = "SR-71 Kurumi companion"
 license = "MIT"
 readme = "README.md"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+rmp-serde = "1.1"

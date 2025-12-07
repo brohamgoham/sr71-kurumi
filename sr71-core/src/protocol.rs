@@ -23,3 +23,4 @@ pub struct MoveTo {
 pub struct IPCPayload {
     pub command: KurumiControl
 }
+

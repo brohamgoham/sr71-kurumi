@@ -6,3 +6,6 @@ edition = "2024"
 [dependencies]
 anyhow = "1.0.100"
 sr71-core = { path = "../sr71-core" }
+rmp-serde = { workspace = true }
+tokio = { version = "1.48", features = ["full"] }
+serde = { workspace = true, features = ["derive"] }
