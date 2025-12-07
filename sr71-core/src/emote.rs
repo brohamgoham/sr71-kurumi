@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, PartialEq, Clone, Eq, Copy, Serialize, Deserialize)]
 pub enum Emote {
@@ -13,4 +13,3 @@ pub enum Emote {
     Shitposting,
     Chilling,
 }
-

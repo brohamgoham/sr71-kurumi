@@ -1,6 +1,5 @@
 use crate::{emote::Emote, protocol::KurumiControl};
 
-
 #[derive(Debug)]
 pub struct AnimeStateMachine {
     current: Emote,
@@ -20,8 +19,9 @@ impl AnimeStateMachine {
         } else {
             KurumiControl::NoOp
         }
-
     }
-    
-    pub fn current(&self) -> Emote { self.current }
+
+    pub fn current(&self) -> Emote {
+        self.current
+    }
 }

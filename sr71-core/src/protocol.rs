@@ -1,6 +1,6 @@
 use crate::emote::Emote;
 
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 pub const SOCKET_PATH: &str = "/run/user/1000/sr71.sock";
 
@@ -10,17 +10,10 @@ pub enum KurumiControl {
     Hide,
     Show,
     NoOp,
-    MoveTo
+    MoveTo { x: i16, y: i16 },
 }
-
-pub struct MoveTo {
-    pub x: i16,
-    pub y: i16
-}
-
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct IPCPayload {
-    pub command: KurumiControl
+    pub command: KurumiControl,
 }
-
