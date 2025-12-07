@@ -12,6 +12,7 @@ use tokio::{
 };
 
 mod ipc;
+mod hooks;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
