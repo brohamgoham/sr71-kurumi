@@ -1,7 +1,6 @@
 use rmp_serde::{from_slice, to_vec_named};
 use sr71_core::{
     anime::AnimeStateMachine,
-    emote::Emote,
     protocol::{IPCPayload, KurumiControl, SOCKET_PATH},
 };
 use std::sync::{Arc, Mutex};
